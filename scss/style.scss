@@ -1,0 +1,8 @@
+@forward 'includes';
+@use 'includes/functions' as f;
+
+body{
+    height: 100vh;
+    font-size: f.calcRem(16);
+    font-family: ubuntu;
+}

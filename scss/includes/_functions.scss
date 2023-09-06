@@ -1,0 +1,16 @@
+@use 'sass:math';
+@function calcRem($val){
+    @if(math.is-unitless($val)){
+        @return math.div($val, 16)+rem;
+    }@else{
+        @error "The inputted value contains a unit, please remove the unit from the size";
+    }
+}
+
+@function calcEm($val){
+    @if(math.is-unitless($val)){
+        @return math.div($val, 16)+em;
+    }@else{
+        @error "The inputted value contains a unit, please remove the unit from the size";
+    }
+}
