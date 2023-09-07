@@ -11,166 +11,199 @@
   <title>Frontend Mentor | Multi-step form</title>
 </head>
 <body>
-  <main>
-    <div class="container-lg">
-      <aside id="step-tracker">
+  <main class="col-lg-8 mx-auto">
+    <div class="container-xl" id="container">
+      <aside class="col-lg-4 py-4" id="step-tracker">
         <ul>
           <li>
-            <div>
-              <div class="step-indicator">1</div>
-              <div class="step-info">
-                <p>Step 1</p>
-                <p>Your info</p>
+            <div class="d-flex gap-3 align-items-center">
+              <div class="step-indicator current" id="indicator1">1</div>
+              <div class="step-info p-0 m-0">
+                <p class="p-0 m-0">Step 1</p>
+                <p class="p-0 m-0">Your info</p>
               </div>
             </div>
           </li>
           <li>
-            <div>
-              <div class="step-indicator">2</div>
-              <div class="step-info">
-                <p>Step 2</p>
-                <p>Select plan</p>
+            <div class="d-flex gap-3 align-items-center">
+              <div class="step-indicator" id="indicator2">2</div>
+              <div class="step-info p-0 m-0">
+                <p class="p-0 m-0">Step 2</p>
+                <p class="p-0 m-0">Select plan</p>
               </div>
             </div>
           </li>
           <li>
-            <div>
-              <div class="step-indicator">3</div>
-              <div class="step-info">
-                <p>Step 3</p>
-                <p>Add-ons</p>
+            <div class="d-flex gap-3 align-items-center">
+              <div class="step-indicator" id="indicator3">3</div>
+              <div class="step-info p-0 m-0">
+                <p class="p-0 m-0">Step 3</p>
+                <p class="p-0 m-0">Add-ons</p>
               </div>
             </div>
           </li>
           <li>
-            <div>
-              <div class="step-indicator">4</div>
-              <div class="step-info">
-                <p>Step 4</p>
-                <p>Summary</p>
+            <div class="d-flex gap-3 align-items-center">
+              <div class="step-indicator" id="indicator4">4</div>
+              <div class="step-info p-0 m-0">
+                <p class="p-0 m-0">Step 4</p>
+                <p class="p-0 m-0">Summary</p>
               </div>
             </div>
           </li>
         </ul>
       </aside>
-      <form action="index.html" method="post">
-        <div class="step" id="step1">
+      <form class="col-lg-8" action="index.html" method="post">
+        <div class="step d-none" id="step1">
           <div class="step-contents">
-            <h3>Personal info</h3>
-            <p>Please provide your name, email address, and phone number.</p>
-            <div class="mb-2">
-              <label for="fullname" class="form-label">Name <span class="form-text">This field is required</span></label>
+            <h2>Personal info</h2>
+            <p class="mb-4">Please provide your name, email address, and phone number.</p>
+            <div class="mb-3">
+              <label for="fullname" class="form-label"><span>Name</span> <span class="form-text">This field is required</span></label>
               <input type="text" class="form-control" id="fullname" placeholder="e.g. Stephen King">
             </div>
-            <div class="mb-2">
-              <label for="email" class="form-label">Email Address <span class="form-text">This field is required</span></label>
+            <div class="mb-3">
+              <label for="email" class="form-label"><span>Email Address</span> <span class="form-text">This field is required</span></label>
               <input type="email" class="form-control" id="email" placeholder="e.g. stephenking@lorem.com">
             </div>
             <div class="mb-4">
-              <label for="phone" class="form-label">Phone Number <span class="form-text">This field is required</span></label>
+              <label for="phone" class="form-label"><span>Phone Number</span> <span class="form-text">This field is required</span></label>
               <input type="tel" class="form-control" id="phone" placeholder="e.g. +1 234 567 890">
             </div>
           </div>
-          <div class="button-div row">
-            <div class="col-4 col-md-3 ms-auto"><button type="button" class="next-btn form-control" id="to-step2-btn">Next Step</button></div>
+          <div class="button-div col-12 mx-auto row">
+            <div class="col-4 col-lg-3 ms-auto"><button type="button" class="next-btn form-control" id="to-step2-btn">Next Step</button></div>
           </div>
         </div>
-        <div class="step" id="step2">
+        <div class="step d-none" id="step2">
           <div class="step-contents">
-            <h3>Select your plan</h3>
+            <h2>Select your plan</h2>
             <p>You have the option of monthly or yearly billing.</p>
-            <div class="row plans">
-              <div class="col-md-4">
-                <img src="./assets/images/icon-arcade.svg" alt="icon-arcade">
-                <div class="plan-info" role="button">
-                  <p>Arcade</p>
-                  <p>$9/mo</p>
-                  <small>2 months free</small>
-                </div>
+            <div class="plans">
+              <div class="plan">
+                <input type="radio" name="plan-radio" value="Arcade" id="plan-arcade">
+                <label for="plan-arcade">
+                  <img src="./assets/images/icon-arcade.svg" alt="icon-arcade">
+                  <div class="plan-info">
+                    <p>Arcade</p>
+                    <p>$9/mo</p>
+                    <small class="d-none">2 months free</small>
+                  </div>
+                </label>
               </div>
-              <div class="col-md-4">
-                <img src="./assets/images/icon-advanced.svg" alt="icon-advanced">
-                <div class="plan-info" role="button">
-                  <p>Advanced</p>
-                  <p>$12/mo</p>
-                  <small>2 months free</small>
-                </div>
+              <div class="plan">
+                <input type="radio" name="plan-radio" value="Advanced" id="plan-advanced">
+                <label for="plan-advanced">
+                  <img src="./assets/images/icon-advanced.svg" alt="icon-advanced">
+                  <div class="plan-info">
+                    <p>Advanced</p>
+                    <p>$12/mo</p>
+                    <small class="d-none">2 months free</small>
+                  </div>
+                </label>
               </div>
-              <div class="col-md-4">
-                <img src="./assets/images/icon-arcade.svg" alt="icon-arcade">
-                <div class="plan-info" role="button">
-                  <p>Pro</p>
-                  <p>$15/mo</p>
-                  <small>2 months free</small>
-                </div>
+              <div class="plan">
+                <input type="radio" name="plan-radio" value="Pro" id="plan-pro">
+                <label for="plan-pro">
+                  <img src="./assets/images/icon-pro.svg" alt="icon-pro">
+                  <div class="plan-info">
+                    <p>Pro</p>
+                    <p>$15/mo</p>
+                    <small class="d-none">2 months free</small>
+                  </div>
+                </label>
               </div>
             </div>
-            <div class="plan-renewal">
+            <div class="plan-renewal mt-3">
               <span>Monthly</span>
-              <label class="switch">
-                <input type="checkbox">
+              <label class="switch" for="the-switch">
+                <input type="checkbox" id="the-switch">
                 <span class="slider"></span>
               </label>
               <span>Yearly</span>
             </div>
           </div>
-          <div class="button-div row">
-            <div class="col-4 col-md-3 me-auto"><button type="button" class="prev-btn form-control" id="to-step1-btn">Go Back</button></div>
-            <div class="col-4 col-md-3 ms-auto"><button type="button" class="next-btn form-control" id="to-step2-btn">Next Step</button></div>
+          <div class="button-div col-12 mx-auto row">
+            <div class="col-4 col-lg-3 me-auto"><button type="button" class="prev-btn form-control" id="to-step1-btn">Go Back</button></div>
+            <div class="col-4 col-lg-3 ms-auto"><button type="button" class="next-btn form-control" id="to-step3-btn">Next Step</button></div>
+          </div>
+        </div>
+        <div class="step" id="step3">
+          <div class="step-contents">
+            <h2>Pick add-ons</h2>
+            <p>Add-ons help enhance your gaming experience.</p>
+            <div class="add-ons">
+              <div class="add-on">
+                <div><input class="form-check-input" type="checkbox" id="add-on1" value="Online service" aria-label="add-on1"></div>
+                <div>
+                  <p>Online service</p>
+                  <small class="add-on-desc">Access to multiplayer games</small>
+                </div>
+                <small class="price">+$1/mo</small>
+              </div>
+              <div class="add-on">
+                <div><input class="form-check-input" type="checkbox" id="add-on2" value="Larger storage" aria-label="add-on2"></div>
+                <div>
+                  <p>Larger storage</p>
+                  <small class="add-on-desc">Extra 1TB of cloud save</small>
+                </div>
+                <small class="price">+$2/mo</small>
+              </div>
+              <div class="add-on">
+                <div><input class="form-check-input" type="checkbox" id="add-on3" value="Customizable Profile" aria-label="add-on3"></div>
+                <div>
+                  <p>Customizable Profile</p>
+                  <small class="add-on-desc">Custom theme on your profile</small>
+                </div>
+                <small class="price">+$2/mo</small>
+              </div>
+            </div>
+          </div>
+          <div class="button-div col-12 mx-auto row">
+            <div class="col-4 col-lg-3 me-auto"><button type="button" class="prev-btn form-control" id="to-step2-btn">Go Back</button></div>
+            <div class="col-4 col-lg-3 ms-auto"><button type="button" class="next-btn form-control" id="to-step4-btn">Next Step</button></div>
+          </div>
+        </div>
+        <div class="step d-none" id="step4">
+          <div class="step-contents">
+            <h2>Finishing up</h2>
+            <p>Double-check everything looks OK before confirming.</p>
+            <div class="subscriptions">
+              <div class="row" id="the-plan">
+                <div>
+                  <p>Arcade <span>(Monthly)</span></p>
+                  <a href="#">Change</a>
+                </div>
+                <small>$9/mo</small>
+              </div>
+              <div id="the-add-ons">
+                <p>Online Service <small>$1/mo</small></p>
+                <p>Larger Storage <small>$2/mo</small></p>
+              </div>
+            </div>
+            <div class="row" id="total">
+              <p>Total <span>(Monthly)</span></p>
+              <small>$12/mo</small>
+            </div>
+          </div>
+          <div class="button-div col-12 mx-auto row">
+            <div class="col-4 col-lg-3 me-auto"><button type="button" class="prev-btn form-control" id="to-step3-btn">Go Back</button></div>
+            <div class="col-4 col-lg-3 ms-auto"><button type="button" class="next-btn form-control" id="to-step5-btn">Confirm</button></div>
+          </div>
+        </div>
+        <div class="step d-none" id="step5">
+          <div class="step-contents">
+            <img src="./assets/images/icon-thank-you.svg" alt="icon-thank-you">
+            <h2>Thank you!</h2>
+            <p>Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at support@loremgaming.com.</p>
           </div>
         </div>
       </form>
     </div>
   </main>
-<!-- Step 3 start -->
-
-  Pick add-ons
-  Add-ons help enhance your gaming experience.
-
-  Online service
-  Access to multiplayer games
-  +$1/mo
-
-  Larger storage
-  Extra 1TB of cloud save
-  +$2/mo
-
-  Customizable Profile
-  Custom theme on your profile
-  +$2/mo
-
-  Go Back
-  Next Step
-
-  <!-- Step 3 end -->
-
-  <!-- Step 4 start -->
-
-  Finishing up
-  Double-check everything looks OK before confirming.
-
-  <!-- Dynamically add subscription and add-on selections here -->
-
-  Total (per month/year)
-
-  Go Back
-  Confirm
-
-  <!-- Step 4 end -->
-
-  <!-- Step 5 start -->
-
-  Thank you!
-
-  Thanks for confirming your subscription! We hope you have fun 
-  using our platform. If you ever need support, please feel free 
-  to email us at support@loremgaming.com.
-
-  <!-- Step 5 end -->
-  
-  <div class="attribution">
+  <footer class="attribution col-12">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="https://www.linkedin.com/in/omar-p-graham/" target="_blank">Omar Graham</a>.
-  </div>
+  </footer>
   <script src="./plugins/bootstrap-5.3.0/js/bootstrap.bundle.min.js"></script>
   <script src="./js/javascript.js"></script>
 </body>

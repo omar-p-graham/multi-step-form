@@ -42,9 +42,10 @@ Users should be able to:
 ### Built with
 
 - Semantic HTML5 markup
-- [SASS/SCSS]/CSS custom properties(https://sass-lang.com/)
+- CSS custom properties
 - Flexbox
 - CSS Grid
+- [SASS/SCSS](https://sass-lang.com/)
 - [Bootstrap](https://getbootstrap.com/)
 - [JS/JQuery](https://jquery.com/)
 

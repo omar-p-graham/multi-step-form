@@ -1,7 +1,14 @@
+@use 'functions' as f;
+
 html{font-size: 100%;overflow-x: hidden;}
 
 *,*::before,*::after{
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+}
+
+li{
+    list-style-type: none;
+    margin: f.calcEm(15) 0;
 }
