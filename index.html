@@ -75,7 +75,7 @@
             <div class="col-4 col-lg-3 ms-auto"><button type="button" class="next-btn form-control" id="to-step2-btn">Next Step</button></div>
           </div>
         </div>
-        <div class="step d-none" id="step2">
+        <div class="step" id="step2">
           <div class="step-contents">
             <h2>Select your plan</h2>
             <p>You have the option of monthly or yearly billing.</p>
@@ -128,7 +128,7 @@
             <div class="col-4 col-lg-3 ms-auto"><button type="button" class="next-btn form-control" id="to-step3-btn">Next Step</button></div>
           </div>
         </div>
-        <div class="step" id="step3">
+        <div class="step d-none" id="step3">
           <div class="step-contents">
             <h2>Pick add-ons</h2>
             <p>Add-ons help enhance your gaming experience.</p>
@@ -168,34 +168,36 @@
           <div class="step-contents">
             <h2>Finishing up</h2>
             <p>Double-check everything looks OK before confirming.</p>
-            <div class="subscriptions">
-              <div class="row" id="the-plan">
+            <div class="subscriptions mt-4">
+              <div id="the-plan">
                 <div>
                   <p>Arcade <span>(Monthly)</span></p>
-                  <a href="#">Change</a>
+                  <a href="#"><small>Change</small></a>
                 </div>
                 <small>$9/mo</small>
               </div>
               <div id="the-add-ons">
-                <p>Online Service <small>$1/mo</small></p>
-                <p>Larger Storage <small>$2/mo</small></p>
+                <small>Online Service <span>$1/mo</span></small>
+                <small>Larger Storage <span>$2/mo</span></small>
               </div>
             </div>
-            <div class="row" id="total">
-              <p>Total <span>(Monthly)</span></p>
+            <div id="total">
+              <small>Total <span>(per month)</span></small>
               <small>$12/mo</small>
             </div>
           </div>
           <div class="button-div col-12 mx-auto row">
             <div class="col-4 col-lg-3 me-auto"><button type="button" class="prev-btn form-control" id="to-step3-btn">Go Back</button></div>
-            <div class="col-4 col-lg-3 ms-auto"><button type="button" class="next-btn form-control" id="to-step5-btn">Confirm</button></div>
+            <div class="col-4 col-lg-3 ms-auto"><button type="button" class="confirm-btn form-control" id="to-step5-btn">Confirm</button></div>
           </div>
         </div>
         <div class="step d-none" id="step5">
           <div class="step-contents">
-            <img src="./assets/images/icon-thank-you.svg" alt="icon-thank-you">
-            <h2>Thank you!</h2>
-            <p>Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at support@loremgaming.com.</p>
+            <div class="thank-you">
+              <img src="./assets/images/icon-thank-you.svg" alt="icon-thank-you">
+              <h2>Thank you!</h2>
+              <p class="text-center">Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at support@loremgaming.com.</p>
+            </div>
           </div>
         </div>
       </form>

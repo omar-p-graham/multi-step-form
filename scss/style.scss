@@ -57,7 +57,7 @@ form{
         .step-contents{
             position: absolute;
             top: f.calcEm(-73);
-            padding: f.calcEm(30);
+            padding: f.calcEm(25);
             background-color: var(--white);
             border-radius: $radius;
             width: 90%;
@@ -98,6 +98,8 @@ form{
                 input{border-color: var(--strawberry-red);}
             }
 
+            p,small{padding: 0;margin: 0;}
+
             .plans{
                 padding: 0;
                 display: flex;
@@ -118,16 +120,11 @@ form{
                         border: 1px solid var(--light-gray);
                         border-radius: $radius;
 
-                        &:hover{
-                            border-color: var(--marine-blue);
-                        }
+                        &:hover{border-color: var(--marine-blue);}
 
                         .plan-info{
                             margin: f.calcRem(8);
                             width: 100%;
-                            p,small{
-                                padding: 0;margin: 0;
-                            }
                             p:nth-child(1),small{
                                 font-weight: 500;
                                 color: var(--marine-blue);
@@ -189,35 +186,107 @@ form{
                 .add-on{
                     border: 1px solid var(--cool-gray);
                     display: flex;
-                    justify-content: space-between;
+                    justify-content: flex-start;
                     align-items: center;
                     gap: f.calcRem(10);
                     padding: f.calcRem(10);
                     border-radius: $radius;
 
-                    &:hover{
-                        border-color: var(--marine-blue);
-                    }
+                    &:hover{border-color: var(--marine-blue);}
 
                     &.checked{
                         border-color: var(--marine-blue);
                         background-color: var(--alabaster);
                     }
 
-                    p,small{padding: 0;margin: 0;}
-
                     p{
                         color: var(--marine-blue);
                         font-weight: 500;  
                     }
-                    small{
-                        color: var(--cool-gray);
+                    small{color: var(--cool-gray);}
+                    .add-on-desc{
+                        font-size: f.calcRem(13);
                     }
                     .price{
                         color: var(--pastel-blue);
                         font-weight: 500;
+                        margin-left: auto;
                     }
                 }
+            }
+
+            .subscriptions{
+                background-color: var(--alabaster);
+                border-radius: $radius;
+                padding: 0;
+
+                #the-plan{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: f.calcRem(20);
+
+                    p,small{
+                        color: var(--marine-blue);
+                        font-weight: 700;
+                    }
+                    a{
+                        text-decoration-color: var(--cool-gray);
+                        small{color: var(--cool-gray);}
+
+                        &:hover{
+                            text-decoration-color: var(--purplish-blue);
+                            small{color: var(--purplish-blue);}
+                        }
+                    }
+                }
+
+                #the-add-ons{
+                    padding: f.calcRem(20);
+                    position: relative;
+
+                    &::before{
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        left: 0;
+                        margin-left: auto;
+                        margin-right: auto;
+                        width: 95%;
+                        height: f.calcRem(.5);
+                        border: f.calcRem(.5) solid var(--light-gray);
+                    }
+
+                    small{
+                        display: flex;
+                        justify-content: space-between;
+                        color: var(--cool-gray);
+
+                        span{
+                            color: var(--marine-blue);
+                        }
+                    }
+                }
+            }
+
+            #total{
+                display: flex;
+                justify-content: space-between;
+                padding: f.calcRem(20);
+                color: var(--cool-gray);
+
+                small:nth-child(2){
+                    color: var(--purplish-blue);
+                    font-weight: 700;
+                    font-size: f.calcRem(16);
+                }
+            }
+
+            .thank-you{
+                display: grid;
+                place-items: center;
+                gap: f.calcRem(10);
             }
         }
         .button-div{
@@ -229,6 +298,7 @@ form{
             background-color: var(--white);
 
             div{padding: 0;}
+
             button{
                 padding: f.calcRem(10);
                 font-weight: 500;
@@ -238,18 +308,14 @@ form{
                     background-color: transparent;
                     color: var(--cool-gray);
 
-                    &:hover{
-                        color: var(--marine-blue);
-                    }
+                    &:hover{color: var(--marine-blue);}
                 }
-                &.next-btn{
-                    background-color: var(--marine-blue);
+                &.next-btn,&.confirm-btn{
                     color: var(--white);
-
-                    &:hover{
-                        opacity: .8;
-                    }
+                    &:hover{opacity: .8;}
                 }
+                &.next-btn{background-color: var(--marine-blue);}
+                &.confirm-btn{background-color: var(--purplish-blue);}
             }
         }
     }
