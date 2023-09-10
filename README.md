@@ -30,13 +30,13 @@ Users should be able to:
 
 ### Screenshot
 
-![desktop view - 1440px](./assets/screenshots/desktop.png)
-![mobile view - 375px](./assets/screenshots/mobile.png)
-![Active and error states](./assets/screenshots/states.png)
+![desktop view - 1440px](./assets/screenshots/desktop/step1.png)
+![mobile view - 375px](./assets/screenshots/mobile/step2.png)
+![Active and error states](./assets/screenshots/mobile/step1.png)
 
 ### Links
 
-- Solution URL: 
+- Solution URL: https://www.frontendmentor.io/solutions/multistep-form-with-validations-and-calculations-4C6-kOER5H
 - Live Site URL: https://omar-p-graham.github.io/multi-step-form/
 
 ### Built with

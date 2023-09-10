@@ -84,12 +84,18 @@ $(document).ready(function(){
     });
 
     /*********** STEP THREE ***********/
+    $("input[type=checkbox]").change(function(){
+        if($(this).is(":checked")){
+            $(this).parent().parent().addClass("checked");
+        }else{
+            $(this).parent().parent().removeClass("checked");
+        }
+    })
+
     $("#to-step4-btn").click(function(){
         addOns = [];
         $(".add-on input[type=checkbox]").each(function(){
-            if($(this).is(":checked")){
-                addOns.push($(this).val());
-            }
+            if($(this).is(":checked")){addOns.push($(this).val());}
         });
         $("#plan-bill").children("span").first().html(plan);
         $("#plan-bill").children("span").last().html(((billType=="mo")?"(Monthly)":"(Yearly)"));
