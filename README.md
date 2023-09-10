@@ -42,12 +42,16 @@ Users should be able to:
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
-- [SASS/SCSS](https://sass-lang.com/)
-- [Bootstrap](https://getbootstrap.com/)
-- [JS/JQuery](https://jquery.com/)
+- CSS 
+  - Custom properties
+  - Flexbox
+  - CSS Grid
+  - [SASS/SCSS](https://sass-lang.com/)
+  - [Bootstrap](https://getbootstrap.com/)
+  - [Animista](https://animista.net/)
+- JavaScript
+  - [JQuery](https://jquery.com/)
+  - [JQuery-Mask](https://igorescobar.github.io/jQuery-Mask-Plugin/)
 
 ## Author
 

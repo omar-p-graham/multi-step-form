@@ -13,6 +13,7 @@
 <body>
   <main class="col-lg-8 mx-auto">
     <div class="container-xl" id="container">
+<!-- SIDEBAR-->
       <aside class="col-lg-4 py-4" id="step-tracker">
         <ul>
           <li>
@@ -53,29 +54,30 @@
           </li>
         </ul>
       </aside>
+<!-- FORM -->
       <form class="col-lg-8" action="index.html" method="post">
-        <div class="step d-none" id="step1">
+        <div class="step" id="step1">
           <div class="step-contents">
             <h2>Personal info</h2>
             <p class="mb-4">Please provide your name, email address, and phone number.</p>
             <div class="mb-3">
               <label for="fullname" class="form-label"><span>Name</span> <span class="form-text">This field is required</span></label>
-              <input type="text" class="form-control" id="fullname" placeholder="e.g. Stephen King">
+              <input type="text" class="form-control needed" id="fullname" placeholder="e.g. Stephen King">
             </div>
             <div class="mb-3">
               <label for="email" class="form-label"><span>Email Address</span> <span class="form-text">This field is required</span></label>
-              <input type="email" class="form-control" id="email" placeholder="e.g. stephenking@lorem.com">
+              <input type="email" class="form-control needed" id="email" placeholder="e.g. stephenking@lorem.com">
             </div>
             <div class="mb-4">
               <label for="phone" class="form-label"><span>Phone Number</span> <span class="form-text">This field is required</span></label>
-              <input type="tel" class="form-control" id="phone" placeholder="e.g. +1 234 567 890">
+              <input type="tel" class="form-control needed" id="phone" placeholder="e.g. +1 234 567 890" maxlength="14">
             </div>
           </div>
           <div class="button-div col-12 mx-auto row">
             <div class="col-4 col-lg-3 ms-auto"><button type="button" class="next-btn form-control" id="to-step2-btn">Next Step</button></div>
           </div>
         </div>
-        <div class="step" id="step2">
+        <div class="step d-none" id="step2">
           <div class="step-contents">
             <h2>Select your plan</h2>
             <p>You have the option of monthly or yearly billing.</p>
@@ -114,17 +116,18 @@
                 </label>
               </div>
             </div>
+            <div class="col-12 mx-auto d-none text-center mt-3" id="plan-notice">Please select a plan</div>  
             <div class="plan-renewal mt-3">
-              <span>Monthly</span>
+              <span class="billing-type selected-bill">Monthly</span>
               <label class="switch" for="the-switch">
                 <input type="checkbox" id="the-switch">
                 <span class="slider"></span>
               </label>
-              <span>Yearly</span>
+              <span class="billing-type">Yearly</span>
             </div>
           </div>
           <div class="button-div col-12 mx-auto row">
-            <div class="col-4 col-lg-3 me-auto"><button type="button" class="prev-btn form-control" id="to-step1-btn">Go Back</button></div>
+            <div class="col-4 col-lg-3 me-auto"><button type="button" class="prev-btn form-control" id="to-step1-btn" onclick="toStep('step1','prev')">Go Back</button></div>
             <div class="col-4 col-lg-3 ms-auto"><button type="button" class="next-btn form-control" id="to-step3-btn">Next Step</button></div>
           </div>
         </div>
@@ -132,7 +135,7 @@
           <div class="step-contents">
             <h2>Pick add-ons</h2>
             <p>Add-ons help enhance your gaming experience.</p>
-            <div class="add-ons">
+            <div class="add-ons pt-4">
               <div class="add-on">
                 <div><input class="form-check-input" type="checkbox" id="add-on1" value="Online service" aria-label="add-on1"></div>
                 <div>
@@ -150,9 +153,9 @@
                 <small class="price">+$2/mo</small>
               </div>
               <div class="add-on">
-                <div><input class="form-check-input" type="checkbox" id="add-on3" value="Customizable Profile" aria-label="add-on3"></div>
+                <div><input class="form-check-input" type="checkbox" id="add-on3" value="Customizable profile" aria-label="add-on3"></div>
                 <div>
-                  <p>Customizable Profile</p>
+                  <p>Customizable profile</p>
                   <small class="add-on-desc">Custom theme on your profile</small>
                 </div>
                 <small class="price">+$2/mo</small>
@@ -160,7 +163,7 @@
             </div>
           </div>
           <div class="button-div col-12 mx-auto row">
-            <div class="col-4 col-lg-3 me-auto"><button type="button" class="prev-btn form-control" id="to-step2-btn">Go Back</button></div>
+            <div class="col-4 col-lg-3 me-auto"><button type="button" class="prev-btn form-control" id="to-step2-btn" onclick="toStep('step2','prev')">Go Back</button></div>
             <div class="col-4 col-lg-3 ms-auto"><button type="button" class="next-btn form-control" id="to-step4-btn">Next Step</button></div>
           </div>
         </div>
@@ -171,10 +174,10 @@
             <div class="subscriptions mt-4">
               <div id="the-plan">
                 <div>
-                  <p>Arcade <span>(Monthly)</span></p>
-                  <a href="#"><small>Change</small></a>
+                  <p id="plan-bill"><span>Arcade</span> <span>(Monthly)</span></p>
+                  <a href="#" onclick="toStep('step2','prev')"><small>Change</small></a>
                 </div>
-                <small>$9/mo</small>
+                <small id="plan-bill-price">$9/mo</small>
               </div>
               <div id="the-add-ons">
                 <small>Online Service <span>$1/mo</span></small>
@@ -183,12 +186,12 @@
             </div>
             <div id="total">
               <small>Total <span>(per month)</span></small>
-              <small>$12/mo</small>
+              <small id="final-cost">$12/mo</small>
             </div>
           </div>
           <div class="button-div col-12 mx-auto row">
-            <div class="col-4 col-lg-3 me-auto"><button type="button" class="prev-btn form-control" id="to-step3-btn">Go Back</button></div>
-            <div class="col-4 col-lg-3 ms-auto"><button type="button" class="confirm-btn form-control" id="to-step5-btn">Confirm</button></div>
+            <div class="col-4 col-lg-3 me-auto"><button type="button" class="prev-btn form-control" id="to-step3-btn" onclick="toStep('step3','prev')">Go Back</button></div>
+            <div class="col-4 col-lg-3 ms-auto"><button type="button" class="confirm-btn form-control" id="to-step5-btn" onclick="toStep('step5','next')">Confirm</button></div>
           </div>
         </div>
         <div class="step d-none" id="step5">
@@ -207,6 +210,8 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="https://www.linkedin.com/in/omar-p-graham/" target="_blank">Omar Graham</a>.
   </footer>
   <script src="./plugins/bootstrap-5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script src="./plugins/jquery/jquery-3.7.1.min.js"></script>
+  <script src="./plugins/jquery/jquery.mask.js"></script>
   <script src="./js/javascript.js"></script>
 </body>
 </html>
